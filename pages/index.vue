@@ -8,6 +8,7 @@ import { UilVuejs } from '@iconscout/vue-unicons'
 export default {
   components: {
     UilVuejs
-  }
+  },
+  layout: 'index'
 }
 </script>
