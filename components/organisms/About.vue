@@ -1,7 +1,6 @@
 <template>
   <section id="about" ref="about" class="about section">
-    <h2 class="section__title">About Me</h2>
-    <span class="section__subtitle">My Introduction</span>
+    <SectionHeader title="About Me" subtitle="My Introduction" />
 
     <div class="about__container container grid">
       <img src="" alt="" class="about__img">
@@ -32,3 +31,13 @@
     </div>
   </section>
 </template>
+
+<script>
+import SectionHeader from '../molecules/SectionHeader'
+
+export default {
+  components: {
+    SectionHeader
+  }
+}
+</script>
