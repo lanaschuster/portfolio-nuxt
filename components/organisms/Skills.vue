@@ -137,17 +137,10 @@ export default {
   components: {
     SectionHeader,
   },
-  // mounted() {
-  //   const skillsContent = document.getElementsByClassName('skills__content')
-  //   // const skillsHeader = document.querySelectorAll('.skills_header')
-
-  //   this.toggleSkills(skillsContent)
-  // },
   methods: {
     toggleSkills(parent) {
       const skillsContent = document.getElementsByClassName('skills__content')
       const itemClass = parent.className
-      // console.log(event)
 
       for (let i = 0; i < skillsContent.length; ++i) {
         skillsContent[i].className = 'skills__content skills__close'
