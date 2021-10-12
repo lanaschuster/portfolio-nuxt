@@ -5,6 +5,7 @@
     <Skills />
     <Qualification />
     <Services />
+    <Portfolio />
   </main>
 </template>
 
@@ -14,6 +15,7 @@ import About from './About.vue'
 import Skills from './Skills.vue'
 import Qualification from './Qualification.vue'
 import Services from './Services.vue'
+import Portfolio from './Portfolio.vue'
 
 export default {
   components: {
@@ -21,7 +23,8 @@ export default {
     About,
     Skills,
     Qualification,
-    Services
+    Services,
+    Portfolio
   }
 }
 </script>
