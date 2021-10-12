@@ -113,7 +113,7 @@ export default {
 }
 </script>
 <style scoped>
-.swiper {
+.portfolio__container {
   width: inherit;
   height: inherit;
 }

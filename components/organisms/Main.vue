@@ -7,6 +7,7 @@
     <Services />
     <Portfolio />
     <FutureWork />
+    <Testimonial />
   </main>
 </template>
 
@@ -18,6 +19,7 @@ import Qualification from './Qualification.vue'
 import Services from './Services.vue'
 import Portfolio from './Portfolio.vue'
 import FutureWork from './FutureWork.vue'
+import Testimonial from './Testimonial.vue'
 
 export default {
   components: {
@@ -27,7 +29,8 @@ export default {
     Qualification,
     Services,
     Portfolio,
-    FutureWork
+    FutureWork,
+    Testimonial
   }
 }
 </script>

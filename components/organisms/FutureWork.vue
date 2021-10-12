@@ -1,6 +1,5 @@
 <template>
   <section id="project" class="project section">
-    <!-- <SectionHeader title="Portfolio" subtitle="Alguns dos meus projetos" /> -->
     <div class="project__bg">
       <div class="project__container container grid">
         <div class="project__data">
@@ -17,16 +16,5 @@
         <img src="" alt="" class="project__img">
       </div>
     </div>
-
   </section>
 </template>
-
-<script>
-// import SectionHeader from '../molecules/SectionHeader'
-
-// export default {
-//   components: {
-//     SectionHeader,
-//   }
-// }
-</script>
