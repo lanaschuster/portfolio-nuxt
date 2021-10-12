@@ -6,6 +6,7 @@
     <Qualification />
     <Services />
     <Portfolio />
+    <FutureWork />
   </main>
 </template>
 
@@ -16,6 +17,7 @@ import Skills from './Skills.vue'
 import Qualification from './Qualification.vue'
 import Services from './Services.vue'
 import Portfolio from './Portfolio.vue'
+import FutureWork from './FutureWork.vue'
 
 export default {
   components: {
@@ -24,7 +26,8 @@ export default {
     Skills,
     Qualification,
     Services,
-    Portfolio
+    Portfolio,
+    FutureWork
   }
 }
 </script>
