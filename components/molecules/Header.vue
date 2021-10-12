@@ -31,7 +31,7 @@
             </a>
           </li>
           <li class="nav__item">
-            <a href="#contactme" class="nav__link" @click="closeMenu">
+            <a href="#contact" class="nav__link" @click="closeMenu">
               <i class="uil uil-message nav__icon"></i> Contact me
             </a>
           </li>

@@ -43,7 +43,7 @@
             <p class="home__description">
               Há 3 anos desenvolvendo aplicações web, com comprometimento e qualidade.
             </p>
-            <a href="#contactme" class="button button--flex">
+            <a href="#contact" class="button button--flex">
               Entre em contato <i class="uil uil-message button__icon"></i>
             </a>
           </div>
