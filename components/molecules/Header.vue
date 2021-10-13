@@ -6,34 +6,34 @@
       <div ref="navMenu" class="nav__menu">
         <ul class="nav__list grid">
           <li class="nav__item">
-            <a href="#home" class="nav__link" @click="closeMenu">
+            <NuxtLink to="#home" class="nav__link" @click="closeMenu">
               <i class="uil uil-estate nav__icon"></i> Home
-            </a>
+            </NuxtLink>
           </li>
           <li class="nav__item">
-            <a href="#about" class="nav__link" @click="closeMenu">
+            <NuxtLink to="#about" class="nav__link" @click="closeMenu">
               <i class="uil uil-user nav__icon"></i> About
-            </a>
+            </NuxtLink>
           </li>
           <li class="nav__item">
-            <a href="#skills" class="nav__link" @click="closeMenu">
+            <NuxtLink to="#skills" class="nav__link" @click="closeMenu">
               <i class="uil uil-file-alt nav__icon"></i> Skills
-            </a>
+            </NuxtLink>
           </li>
           <li class="nav__item">
-            <a href="#services" class="nav__link" @click="closeMenu">
+            <NuxtLink to="#services" class="nav__link" @click="closeMenu">
               <i class="uil uil-briefcase-alt nav__icon"></i> Services
-            </a>
+            </NuxtLink>
           </li>
           <li class="nav__item">
-            <a href="#portfolio" class="nav__link" @click="closeMenu">
+            <NuxtLink to="#portfolio" class="nav__link" @click="closeMenu">
               <i class="uil uil-scenery nav__icon"></i> Portfolio
-            </a>
+            </NuxtLink>
           </li>
           <li class="nav__item">
-            <a href="#contact" class="nav__link" @click="closeMenu">
+            <NuxtLink to="#contact" class="nav__link" @click="closeMenu">
               <i class="uil uil-message nav__icon"></i> Contact me
-            </a>
+            </NuxtLink>
           </li>
         </ul>
         <i ref="navClose" class="uil uil-times nav__close" @click="closeMenu"></i>

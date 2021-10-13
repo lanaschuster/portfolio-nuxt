@@ -885,3 +885,11 @@ img {
 .footer__social {
   color: #FFF;
 }
+
+a.nuxt-link-active {
+  color: var(--first-color);
+}
+/* exact link will show the primary color for only the exact matching link */
+a.nuxt-link-exact-active {
+  color: var(--first-color);
+}
