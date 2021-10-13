@@ -50,9 +50,17 @@
 
 <script>
 export default {
-  data() {
-    return {
-      toggle: true
+  mounted() {
+    const theme = localStorage.getItem('theme')
+    const icon = localStorage.getItem('icon')
+    const themeButton = document.getElementById('theme-button')
+
+    const darkTheme = 'dark-theme'
+    const iconTheme = 'uil-sun'
+
+    if (theme) {
+      document.body.classList[theme === 'dark' ? 'add' : 'remove'](darkTheme)
+      themeButton.classList[icon === 'uil-moon' ? 'add' : 'remove'](iconTheme)
     }
   },
   methods: {
@@ -66,7 +74,22 @@ export default {
       navMenu.classList.remove('show-menu')
     },
     changeTheme() {
-      // TODO
+      const darkTheme = 'dark-theme'
+      const iconTheme = 'uil-sun'
+      const themeButton = document.getElementById('theme-button')
+
+      document.body.classList.toggle(darkTheme)
+      themeButton.classList.toggle(iconTheme)
+      localStorage.setItem('theme', this.getCurrentTheme())
+      localStorage.setItem('icon', this.getCurrentIcon())
+    },
+    getCurrentTheme() {
+      const darkTheme = 'dark-theme'
+      return document.body.classList.contains(darkTheme) ? 'dark' : 'light'
+    },
+    getCurrentIcon() {
+      const iconTheme = 'uil-sun'
+      return document.body.classList.contains(iconTheme) ? 'uil-sun' : 'uil-moon'
     }
   },
 }
