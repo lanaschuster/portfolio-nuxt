@@ -39,6 +39,7 @@
         <i ref="navClose" class="uil uil-times nav__close" @click="closeMenu"></i>
       </div>
       <div class="nav__btns">
+        <i id="theme-button" class="uil uil-moon change-theme" @click="changeTheme"></i>
         <div ref="navToggle" class="nav__toggle" @click="showMenu">
           <i class="uil uil-apps"></i>
         </div>
@@ -63,6 +64,9 @@ export default {
     closeMenu() {
       const navMenu = this.$refs.navMenu
       navMenu.classList.remove('show-menu')
+    },
+    changeTheme() {
+      // TODO
     }
   },
 }
