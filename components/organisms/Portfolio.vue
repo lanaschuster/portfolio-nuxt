@@ -20,20 +20,6 @@
               <i class="uil uil-arrow-right button__icon"></i>
             </a>
           </div>
-          <!-- <div class="swiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">Slide 1</div>
-              <div class="swiper-slide">Slide 2</div>
-              <div class="swiper-slide">Slide 3</div>
-
-            </div>
-            <div class="swiper-pagination"></div>
-
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-
-            <div class="swiper-scrollbar"></div>
-          </div> -->
         </div>
         <div class="portfolio__content grid swiper-slide">
           <img src="" alt="" class="portfolio__img" />
@@ -115,6 +101,9 @@ export default {
 <style scoped>
 .portfolio__container {
   width: inherit;
-  height: inherit;
+  height: calc(100% + 30px);
+}
+.swiper-wrapper {
+  padding-bottom: 2rem;
 }
 </style>

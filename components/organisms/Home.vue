@@ -46,15 +46,14 @@
             <a href="#contact" class="button button--flex">
               Entre em contato <i class="uil uil-message button__icon"></i>
             </a>
+            <div class="home__scroll">
+              <a class="home__scroll-button button--flex" href="#about">
+                <i class="uil uil-mouse-alt home__scroll-mouse"></i>
+                <span class="home__scroll-name">Role para baixo</span>
+                <i class="uil uil-arrow-down home__scroll-arrow"></i>
+              </a>
+            </div>
           </div>
-        </div>
-
-        <div class="home__scroll">
-          <a class="home__scroll-button button--flex" href="#about">
-            <i class="uil uil-mouse-alt home__scroll-mouse"></i>
-            <span class="home__scroll-name">Role para baixo</span>
-            <i class="uil uil-arrow-down home__scroll-arrow"></i>
-          </a>
         </div>
       </div>
     </section>

@@ -97,7 +97,7 @@ export default {
       this.swiper = new Swiper('.testimonial__container', {
         loop: true,
         grabCursor: true,
-        spaceBetween: 48,
+        spaceBetween: 12,
         pagination: {
           el: ".swiper-pagination-testimonial",
           clickable: true,
