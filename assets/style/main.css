@@ -366,34 +366,6 @@
   overflow: hidden;
 }
 
-.skills__html,
-.skills__js,
-.skills__vue {
-  width: 90%;
-}
-
-.skills__vue {
-  width: 92%;
-}
-
-.skills__css {
-  width: 80%;
-}
-
-.skills__node,
-.skills__sql,
-.skills__rest {
-  width: 85%;
-}
-
-.skills__redis {
-  width: 45%;
-}
-
-.skills__graphql {
-  width: 10%;
-}
-
 .qualification__tabs {
   display: flex;
   justify-content: space-evenly;
