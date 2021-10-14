@@ -3,11 +3,14 @@
       <div class="home__container container grid">
         <div class="home__content grid">
           <div class="home__social">
-            <a href="#" target="_blank" class="home__social-icon">
-              <i class="uil uil-linkedin-alt"></i>
-            </a>
-            <a href="#" target="_blank" class="home__social-icon">
-              <i class="uil uil-github"></i>
+            <a 
+              v-for="(link, i) in homeLinks"
+              :key="`home_link_${i}`"
+              :href="link.url"
+              target="_blank" 
+              class="home__social-icon"
+            >
+              <i class="uil" :class="[ link.icone ]"></i>
             </a>
           </div>
           <div class="home__img">
@@ -32,16 +35,16 @@
                   129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 
                   -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"
                 />
-                <image xlink:href="/img/me2.png" x="12" y="17" class="home__blob-img" />
+                <image :xlink:href="`http://localhost:1337${home.imagem.url}`" x="12" y="17" class="home__blob-img" />
               </g>
             </svg>
           </div>
 
           <div class="home__data">
-            <h1 class="home__title">Olá, me chamo Lana</h1>
-            <h3 class="home__subtitle">Full Stack developer</h3>
+            <h1 class="home__title">{{ home.titulo }}</h1>
+            <h3 class="home__subtitle">{{ home.subtitulo }}</h3>
             <p class="home__description">
-              Há 3 anos desenvolvendo aplicações web, com comprometimento e qualidade.
+              {{ home.descricao }}
             </p>
             <a href="#contact" class="button button--flex">
               Entre em contato <i class="uil uil-message button__icon"></i>
@@ -49,7 +52,7 @@
             <div class="home__scroll">
               <a class="home__scroll-button button--flex" href="#about">
                 <i class="uil uil-mouse-alt home__scroll-mouse"></i>
-                <span class="home__scroll-name">Role para baixo</span>
+                <span class="home__scroll-name">Veja mais</span>
                 <i class="uil uil-arrow-down home__scroll-arrow"></i>
               </a>
             </div>
@@ -60,5 +63,40 @@
 </template>
 
 <script>
-export default {}
+import gql from 'graphql-tag'
+
+export default {
+  data() {
+    return {
+      home: {},
+      homeLinks: []
+    }
+  },
+  apollo: {
+    home: {
+      query: gql`
+        query {
+          home {
+            titulo,
+            subtitulo,
+            descricao,
+            imagem{
+              url
+            }
+          }
+        }
+      `,
+    },
+    homeLinks: {
+      query: gql`
+        query {
+          homeLinks {
+            icone,
+            url
+          }
+        }
+      `,
+    },
+  },
+}
 </script>
