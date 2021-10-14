@@ -1,29 +1,33 @@
 <template>
   <section id="about" ref="about" class="about section">
-    <SectionHeader title="About Me" subtitle="My Introduction" />
+    <SectionHeader :title="about.titulo" :subtitle="about.subtitulo" />
 
     <div class="about__container container grid">
-      <img src="/img/about.jpg" alt="" class="about__img">
+      <img
+        :src="`http://localhost:1337${about.imagem.url}`"
+        alt="Sobre mim"
+        class="about__img"
+      />
       <div class="about__data">
         <p class="about__description">
-          Web developer, with extensive knowledge and years of experience, working in web technologies and delivering quality work.
+          {{ about.descricao }}
         </p>
         <div class="about__info">
-          <div>
-            <span class="about__info-title">03+</span>
-            <span class="about__info-name">Anos de <br>experiência</span>
-          </div>
-          <div>
-            <span class="about__info-title">01+</span>
-            <span class="about__info-name">Projetos <br>concluídos</span>
-          </div>
-          <div>
-            <span class="about__info-title">02+</span>
-            <span class="about__info-name">Empresas <br>trabalhadas</span>
+          <div
+            v-for="(item, i) in aboutIndicadores"
+            :key="`about_indicador_${i}`"
+          >
+            <span class="about__info-title">{{ item.valor }}</span>
+            <span class="about__info-name">{{ item.descricao }}</span>
           </div>
         </div>
         <div class="about__btns">
-          <a download="" href="" class="button button--flex">
+          <a
+            target="_blank"
+            download="Lana_cv.pdf"
+            :href="`http://localhost:1337${about.curriculo.url}`"
+            class="button button--flex"
+          >
             Download CV <i class="uil uil-download-alt button__icon"></i>
           </a>
         </div>
@@ -33,11 +37,47 @@
 </template>
 
 <script>
+import gql from 'graphql-tag'
 import SectionHeader from '../molecules/SectionHeader'
 
 export default {
   components: {
-    SectionHeader
-  }
+    SectionHeader,
+  },
+  data() {
+    return {
+      about: {},
+      aboutIndicadores: [],
+    }
+  },
+  apollo: {
+    about: {
+      query: gql`
+        query {
+          about {
+            titulo
+            subtitulo
+            descricao
+            imagem {
+              url
+            }
+            curriculo {
+              url
+            }
+          }
+        }
+      `,
+    },
+    aboutIndicadores: {
+      query: gql`
+        query {
+          aboutIndicadores {
+            valor
+            descricao
+          }
+        }
+      `,
+    },
+  },
 }
 </script>
