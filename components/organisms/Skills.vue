@@ -91,6 +91,7 @@ export default {
           skills {
             titulo
             subtitulo
+            icone
             skill_items {
               titulo
               nivel
