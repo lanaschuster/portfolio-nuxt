@@ -119,6 +119,9 @@ export default {
     trabalhoList() {
       return this.qualification.qualification_items
         .filter(it => it.tipo === 'TRABALHO')
+        .sort(function (a, b) {
+        	return (a.ordem > b.ordem) ? 1 : ((b.ordem > a.ordem) ? -1 : 0);
+        })
     }
   },
   methods: {

@@ -1,14 +1,17 @@
 <template>
   <section id="services" class="services section">
-    <SectionHeader title="Services" subtitle="What I offer" />
+    <SectionHeader :title="servicesSection.titulo" :subtitle="servicesSection.subtitulo" />
 
     <div class="services__container container grid">
-      <div class="services__content">
+      <div 
+        v-for="(servico, i) in servicesSection.services"
+        :key="`service_${i}`"
+        class="services__content"
+      >
         <div>
-          <i class="uil uil-web-grid services__icon"></i>
+          <i class="uil services__icon" :class="[ servico.icone ]"></i>
           <h3 class="services__title">
-            Criação de <br />
-            Websites
+            {{ servico.titulo }}
           </h3>
         </div>
 
@@ -17,50 +20,24 @@
             button button--flex button--small button--link
             services__button
           "
-          @click="openModal1"
+          @click="openModal(`modal${i}`)"
         >
           Ver mais <i class="uil uil-arrow-right button__icon"></i>
         </span>
 
         <ServiceModal
-          ref="modal1"
-          title="Criação de Websites"
-          :items="['Desenvolvo websites responsivos']"
+          :id="`modal${i}`"
+          :ref="`modal${i}`"
+          :title="servico.titulo"
+          :items="servico.topicos.split(';')"
         />
-      </div>
-
-      <div class="services__content">
-        <div>
-          <i class="uil uil-web-grid services__icon"></i>
-          <h3 class="services__title">
-            Desenvolvimento de <br />
-            Sistemas
-          </h3>
-        </div>
-
-        <span
-          class="
-            button button--flex button--small button--link
-            services__button
-          "
-          @click="openModal2"
-        >
-          Ver mais <i class="uil uil-arrow-right button__icon"></i>
-        </span>
-        <ServiceModal
-          ref="modal2"
-          title="Desenvolvimento de Sistemas"
-          :items="[
-            'Desenvolvo sistemas web com as regras de negócio fornecidas pelo cliente',
-          ]"
-        />
-
       </div>
     </div>
   </section>
 </template>
 
 <script>
+import gql from 'graphql-tag'
 import SectionHeader from '../molecules/SectionHeader'
 import ServiceModal from '../molecules/ServiceModal'
 
@@ -69,13 +46,33 @@ export default {
     SectionHeader,
     ServiceModal,
   },
-  methods: {
-    openModal1() {
-      this.$refs.modal1.$el.classList.remove('services__modal-hidden')
-    },
-    openModal2() {
-      this.$refs.modal2.$el.classList.remove('services__modal-hidden')
+  data() {
+    return {
+      servicesSection: {},
     }
-  }
+  },
+  methods: {
+    openModal(modalId) {
+      const modal = document.getElementById(modalId)
+      modal.classList.remove('services__modal-hidden')
+    }
+  },
+  apollo: {
+    servicesSection: {
+      query: gql`
+        query {
+          servicesSection{
+            titulo,
+            subtitulo,
+            services{
+              titulo,
+              icone,
+              topicos
+            }
+          }
+        }
+      `,
+    }
+  },
 }
 </script>
