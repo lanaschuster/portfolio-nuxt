@@ -1,7 +1,7 @@
 <template>
   <header id="header" class="header">
     <nav class="nav container">
-      <a href="#" class="nav__logo">Lana</a>
+      <a href="#" class="nav__logo">{{ title }}</a>
 
       <div ref="navMenu" class="nav__menu">
         <ul class="nav__list grid">
@@ -50,6 +50,12 @@
 
 <script>
 export default {
+  props: {
+    title: {
+      type: String,
+      default: ''
+    }
+  },
   mounted() {
     const theme = localStorage.getItem('theme')
     const icon = localStorage.getItem('icon')
@@ -91,6 +97,6 @@ export default {
       const iconTheme = 'uil-sun'
       return document.body.classList.contains(iconTheme) ? 'uil-sun' : 'uil-moon'
     }
-  },
+  }
 }
 </script>
