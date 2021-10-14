@@ -3,7 +3,7 @@
     <SectionHeader title="About Me" subtitle="My Introduction" />
 
     <div class="about__container container grid">
-      <img src="" alt="" class="about__img">
+      <img src="/img/about.jpg" alt="" class="about__img">
       <div class="about__data">
         <p class="about__description">
           Web developer, with extensive knowledge and years of experience, working in web technologies and delivering quality work.

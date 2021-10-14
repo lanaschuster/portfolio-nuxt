@@ -1215,4 +1215,8 @@ a.nuxt-link-exact-active {
   .contact__inputs {
     grid-template-columns: repeat(2, 1fr);
   }
+  .scrollup {
+    right: 5rem;
+    padding: .2rem .5rem;
+  }
 }
