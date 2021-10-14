@@ -6,7 +6,9 @@
   --header-height: 3rem;
 
   /* Colors */
-  --hue-color: 250;
+  --hue-color: 337;
+  /* 337 rosa */
+  /* 284 rosa meio roxo */
 
   --first-color: hsl(var(--hue-color), 69%, 61%);
   --first-color-second: hsl(var(--hue-color), 69%, 61%);

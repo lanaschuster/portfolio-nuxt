@@ -1,15 +1,20 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'portfolio-nuxt',
+    title: 'Lana Schuster :: Portfolio',
     htmlAttrs: {
       lang: 'en'
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' }
+      { hid: 'description', name: 'description', content: 'Precisa de um desenvolvedor para o seu projeto? Entre em contato!' },
+      { name: 'format-detection', content: 'telephone=no' },
+      { property: 'og:type', content: 'website' },
+      { property: 'og:title', content: 'Lana Schuster :: Portfolio' },
+      { property: 'og:description', content: 'Precisa de um desenvolvedor para o seu projeto? Entre em contato!' },
+      { property: 'og:url', content: 'http://localhost:3000' },
+      { property: 'og:image', content: 'http://localhost:3000/img/favicon.ico' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
