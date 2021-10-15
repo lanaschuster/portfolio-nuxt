@@ -13,11 +13,12 @@ export default {
       { property: 'og:type', content: 'website' },
       { property: 'og:title', content: 'Lana Schuster :: Portfolio' },
       { property: 'og:description', content: 'Precisa de um desenvolvedor para o seu projeto? Entre em contato!' },
-      { property: 'og:url', content: process.env.BASE_URL },
-      { property: 'og:image', content: process.env.BASE_URL + '/img/favicon.ico' },
+      { property: 'og:url', content: process.env.baseUrl },
+      { property: 'og:image', content: process.env.baseUrl + '/img/favicon.ico' },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://unicons.iconscout.com/release/v4.0.0/css/line.css' }
     ]
   },
 
