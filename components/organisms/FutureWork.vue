@@ -3,18 +3,49 @@
     <div class="project__bg">
       <div class="project__container container grid">
         <div class="project__data">
-          <h2 class="project__title">You have a new project</h2>
+          <h2 class="project__title">{{ discountSection.titulo }}</h2>
           <p class="project__description">
-            Contact me now and get a 30% discount on your new project
+            {{ discountSection.descricao }}
           </p>
           <a href="#contact" class="button button--flex button--white">
-            Contact Me
+            Entre em contato
             <i class="uil uil-message button__icon project__icon"></i>
           </a>
         </div>
 
-        <img src="" alt="" class="project__img">
+        <img
+          :src="`http://localhost:1337${discountSection.imagem.url}`"
+          alt="Discount"
+          class="project__img"
+        />
       </div>
     </div>
   </section>
 </template>
+
+<script>
+import gql from 'graphql-tag'
+
+export default {
+  data() {
+    return {
+      discountSection: {},
+    }
+  },
+  apollo: {
+    discountSection: {
+      query: gql`
+        query {
+          discountSection {
+            titulo
+            descricao
+            imagem {
+              url
+            }
+          }
+        }
+      `,
+    },
+  },
+}
+</script>
