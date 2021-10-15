@@ -12,27 +12,27 @@
           </li>
           <li class="nav__item">
             <NuxtLink to="#about" class="nav__link" @click="closeMenu">
-              <i class="uil uil-user nav__icon"></i> About
+              <i class="uil uil-user nav__icon"></i> Sobre
             </NuxtLink>
           </li>
           <li class="nav__item">
             <NuxtLink to="#skills" class="nav__link" @click="closeMenu">
-              <i class="uil uil-file-alt nav__icon"></i> Skills
+              <i class="uil uil-file-alt nav__icon"></i> Competências
             </NuxtLink>
           </li>
           <li class="nav__item">
             <NuxtLink to="#services" class="nav__link" @click="closeMenu">
-              <i class="uil uil-briefcase-alt nav__icon"></i> Services
+              <i class="uil uil-briefcase-alt nav__icon"></i> Serviços
             </NuxtLink>
           </li>
           <li class="nav__item">
             <NuxtLink to="#portfolio" class="nav__link" @click="closeMenu">
-              <i class="uil uil-scenery nav__icon"></i> Portfolio
+              <i class="uil uil-scenery nav__icon"></i> Portfólio
             </NuxtLink>
           </li>
           <li class="nav__item">
             <NuxtLink to="#contact" class="nav__link" @click="closeMenu">
-              <i class="uil uil-message nav__icon"></i> Contact me
+              <i class="uil uil-message nav__icon"></i> Contato
             </NuxtLink>
           </li>
         </ul>

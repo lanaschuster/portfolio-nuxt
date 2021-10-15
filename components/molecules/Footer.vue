@@ -9,28 +9,30 @@
 
         <ul class="footer__links">
           <li>
-            <a href="#services" class="footer__link">Services</a>
+            <a href="#services" class="footer__link">Serviços</a>
           </li>
           <li>
-            <a href="#portfolio" class="footer__link">Portfolio</a>
+            <a href="#portfolio" class="footer__link">Portfólio</a>
           </li>
           <li>
-            <a href="#contact" class="footer__link">Contact Me</a>
+            <a href="#contact" class="footer__link">Contato</a>
           </li>
         </ul>
 
         <div class="footer__socials">
-          <a href="" target="_blank" class="footer__social">
-            <i class="uil uil-facebook-f"></i>
-          </a>
-          <a href="" target="_blank" class="footer__social">
-            <i class="uil uil-twitter"></i>
-          </a>
-          <a href="" target="_blank" class="footer__social">
+          <a
+            href="https://www.linkedin.com/in/lana-schuster-48b896195/"
+            target="_blank"
+            class="footer__social"
+          >
             <i class="uil uil-linkedin"></i>
           </a>
-          <a href="" target="_blank" class="footer__social">
-            <i class="uil uil-telegram"></i>
+          <a
+            href="https://github.com/lanaschuster"
+            target="_blank"
+            class="footer__social"
+          >
+            <i class="uil uil-github"></i>
           </a>
         </div>
       </div>
