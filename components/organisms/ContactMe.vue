@@ -1,33 +1,19 @@
 <template>
   <section id="contact" class="contact section">
-    <SectionHeader title="Contact Me" subtitle="Get in touch" />
+    <SectionHeader :title="contactSection.titulo" :subtitle="contactSection.subtitulo" />
 
     <div class="contact__container container grid">
       <div>
-        <div class="contact__information">
-          <i class="uil uil-phone contact__icon"></i>
+        <div 
+          v-for="(item, i) in contactSection.contacts"
+          :key="`contato_${i}`"
+          class="contact__information"
+        >
+          <i class="uil contact__icon" :class="[ item.icone ]"></i>
 
           <div>
-            <h3 class="contact__title">Phone</h3>
-            <span class="contact__subtitle">+55 (45) 99837-1794</span>
-          </div>
-        </div>
-
-        <div class="contact__information">
-          <i class="uil uil-envelope contact__icon"></i>
-
-          <div>
-            <h3 class="contact__title">E-mail</h3>
-            <span class="contact__subtitle">lanaschuster1@gmail.com</span>
-          </div>
-        </div>
-
-        <div class="contact__information">
-          <i class="uil uil-map-marker contact__icon"></i>
-
-          <div>
-            <h3 class="contact__title">Location</h3>
-            <span class="contact__subtitle">Brazil</span>
+            <h3 class="contact__title">{{ item.titulo }}</h3>
+            <span class="contact__subtitle">{{ item.conteudo }}</span>
           </div>
         </div>
       </div>
@@ -44,11 +30,11 @@
           </div>
         </div>
         <div class="contact__content">
-          <label for="" class="contact__label">Project</label>
+          <label for="" class="contact__label">Projeto</label>
           <input type="text" class="contact__input" />
         </div>
         <div class="contact__content">
-          <label for="" class="contact__label">Message</label>
+          <label for="" class="contact__label">Mensagem</label>
           <textarea
             id=""
             name=""
@@ -59,7 +45,7 @@
         </div>
         <div>
           <a href="#" class="button button--flex">
-            Send Message
+            Enviar mensagem
             <i class="uil uil-message button__icon"></i>
           </a>
         </div>
@@ -69,11 +55,34 @@
 </template>
 
 <script>
+import gql from 'graphql-tag'
 import SectionHeader from '../molecules/SectionHeader'
 
 export default {
   components: {
     SectionHeader,
+  },
+  data() {
+    return {
+      contactSection: {},
+    }
+  },
+  apollo: {
+    contactSection: {
+      query: gql`
+        query {
+          contactSection{
+            titulo,
+            subtitulo,
+            contacts{
+              icone,
+              titulo,
+              conteudo
+            }
+          }
+        }
+      `,
+    },
   },
 }
 </script>
