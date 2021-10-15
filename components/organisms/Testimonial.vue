@@ -11,7 +11,7 @@
         >
           <div class="testimonial__data">
             <div class="testimonial__header">
-              <img :src="`http://localhost:1337${item.imagem.url}`" alt="Foto do cliente" class="testimonial__img" />
+              <img :src="`${url}${item.imagem.url}`" alt="Foto do cliente" class="testimonial__img" />
               <div>
                 <h3 class="testimonial__name">{{ item.nome }}</h3>
                 <span class="testimonial__client">{{ item.tipo }}</span>
@@ -47,6 +47,11 @@ export default {
     return {
       swiper: null,
       testimonialSection: {},
+    }
+  },
+  computed: {
+    url() {
+      return process.env.strapiUrl
     }
   },
   mounted() {

@@ -14,7 +14,7 @@
         </div>
 
         <img
-          :src="`http://localhost:1337${discountSection.imagem.url}`"
+          :src="`${url}${discountSection.imagem.url}`"
           alt="Discount"
           class="project__img"
         />
@@ -30,6 +30,11 @@ export default {
   data() {
     return {
       discountSection: {},
+    }
+  },
+  computed: {
+    url() {
+      return process.env.strapiUrl
     }
   },
   apollo: {

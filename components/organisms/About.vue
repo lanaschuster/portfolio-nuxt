@@ -4,7 +4,7 @@
 
     <div class="about__container container grid">
       <img
-        :src="`http://localhost:1337${about.imagem.url}`"
+        :src="`${url}${about.imagem.url}`"
         alt="Sobre mim"
         class="about__img"
       />
@@ -25,7 +25,7 @@
           <a
             target="_blank"
             download="Lana_cv.pdf"
-            :href="`http://localhost:1337${about.curriculo.url}`"
+            :href="`${url}${about.curriculo.url}`"
             class="button button--flex"
           >
             Download CV <i class="uil uil-download-alt button__icon"></i>
@@ -48,6 +48,11 @@ export default {
     return {
       about: {},
       aboutIndicadores: [],
+    }
+  },
+  computed: {
+    url() {
+      return process.env.strapiUrl
     }
   },
   apollo: {

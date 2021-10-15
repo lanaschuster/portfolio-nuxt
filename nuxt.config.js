@@ -13,8 +13,8 @@ export default {
       { property: 'og:type', content: 'website' },
       { property: 'og:title', content: 'Lana Schuster :: Portfolio' },
       { property: 'og:description', content: 'Precisa de um desenvolvedor para o seu projeto? Entre em contato!' },
-      { property: 'og:url', content: 'http://localhost:3000' },
-      { property: 'og:image', content: 'http://localhost:3000/img/favicon.ico' },
+      { property: 'og:url', content: process.env.BASE_URL },
+      { property: 'og:image', content: process.env.BASE_URL + '/img/favicon.ico' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -52,9 +52,15 @@ export default {
   apollo: {
     clientConfigs: {
       default: {
-        httpEndpoint: 'http://localhost:1337/graphql',
+        httpEndpoint: process.env.STRAPI_GQL_URL || 'http://localhost:1337/graphql',
       }
     }
+  },
+
+  env: {
+    baseUrl: process.env.BASE_URL || 'http://localhost:3000',
+    strapiUrl: process.env.STRAPI_URL || 'http://localhost:1337',
+    strapiGql: process.env.STRAPI_GQL_URL || 'http://localhost:1337/graphql',
   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
