@@ -80,10 +80,6 @@ export default {
 }
 </script>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
-@import url('https://unicons.iconscout.com/release/v4.0.0/css/line.css');
-
-
 :root {
   --header-height: 3rem;
 

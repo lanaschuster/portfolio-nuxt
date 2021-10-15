@@ -55,7 +55,11 @@ export default {
   },
   computed: {
     url() {
-      return process.env.strapiUrl
+      let strapiUrl = process.env.strapiUrl
+      if (strapiUrl.charAt(strapiUrl.length - 1) === '/') {
+        strapiUrl = strapiUrl.replace(/\/([^/]*)$/, '$1')
+      }
+      return strapiUrl
     }
   },
   mounted() {
