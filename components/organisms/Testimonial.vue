@@ -1,77 +1,32 @@
 <template>
   <section id="testimonial" class="testimonial section">
-    <SectionHeader title="Testimonial" subtitle="O que meus clientes falam" />
+    <SectionHeader :title="testimonialSection.titulo" :subtitle="testimonialSection.subtitulo" />
 
     <div class="testimonial__container container swiper">
       <div class="swiper-wrapper">
-        <div class="testimonial__content swiper-slide">
+        <div 
+          v-for="(item, i) in testimonialSection.testimonials"
+          :key="`testimonial_${i}`"
+          class="testimonial__content swiper-slide"
+        >
           <div class="testimonial__data">
             <div class="testimonial__header">
-              <img src="" alt="" class="testimonial__img">
+              <img :src="`http://localhost:1337${item.imagem.url}`" alt="Foto do cliente" class="testimonial__img" />
               <div>
-                <h3 class="testimonial__name">John Doe</h3>
-                <span class="testimonial__client">Cliente</span>
+                <h3 class="testimonial__name">{{ item.nome }}</h3>
+                <span class="testimonial__client">{{ item.tipo }}</span>
               </div>
             </div>
             <div>
-              <i class="uil uil-star testimonial__icon-star"></i>
-              <i class="uil uil-star testimonial__icon-star"></i>
-              <i class="uil uil-star testimonial__icon-star"></i>
-              <i class="uil uil-star testimonial__icon-star"></i>
-              <i class="uil uil-star testimonial__icon-star"></i>
+              <i 
+                v-for="j of item.numeroEstrelas"
+                :key="`star_${i}_${j}`"
+                class="uil uil-star testimonial__icon-star"
+              ></i>
             </div>
           </div>
-          
 
-          <p class="testimonial__description">
-            loren ipsum...
-          </p>
-        </div>
-        <div class="testimonial__content swiper-slide">
-          <div class="testimonial__data">
-            <div class="testimonial__header">
-              <img src="" alt="" class="testimonial__img">
-              <div>
-                <h3 class="testimonial__name">Luiz Carlos</h3>
-                <span class="testimonial__client">Marido</span>
-              </div>
-            </div>
-            <div>
-              <i class="uil uil-star testimonial__icon-star"></i>
-              <i class="uil uil-star testimonial__icon-star"></i>
-              <i class="uil uil-star testimonial__icon-star"></i>
-              <i class="uil uil-star testimonial__icon-star"></i>
-              <i class="uil uil-star testimonial__icon-star"></i>
-            </div>
-          </div>
-          
-
-          <p class="testimonial__description">
-            ti amu s2
-          </p>
-        </div>
-        <div class="testimonial__content swiper-slide">
-          <div class="testimonial__data">
-            <div class="testimonial__header">
-              <img src="" alt="" class="testimonial__img">
-              <div>
-                <h3 class="testimonial__name">Bla Bla</h3>
-                <span class="testimonial__client">bla bla bla bla</span>
-              </div>
-            </div>
-            <div>
-              <i class="uil uil-star testimonial__icon-star"></i>
-              <i class="uil uil-star testimonial__icon-star"></i>
-              <i class="uil uil-star testimonial__icon-star"></i>
-              <i class="uil uil-star testimonial__icon-star"></i>
-              <i class="uil uil-star testimonial__icon-star"></i>
-            </div>
-          </div>
-          
-
-          <p class="testimonial__description">
-            ti amu s2
-          </p>
+          <p class="testimonial__description">{{ item.descricao }}</p>
         </div>
       </div>
       <div class="swiper-pagination swiper-pagination-testimonial"></div>
@@ -80,6 +35,7 @@
 </template>
 
 <script>
+import gql from 'graphql-tag'
 import SectionHeader from '../molecules/SectionHeader'
 import Swiper from '@/assets/js/swiper-bundle.min.js'
 
@@ -89,28 +45,49 @@ export default {
   },
   data() {
     return {
-      swiper: null
+      swiper: null,
+      testimonialSection: {},
     }
   },
   mounted() {
     if (!this.swiper) {
       this.swiper = new Swiper('.testimonial__container', {
-        loop: true,
         grabCursor: true,
-        spaceBetween: 12,
+        spaceBetween: 48,
         pagination: {
-          el: ".swiper-pagination-testimonial",
+          el: '.swiper-pagination-testimonial',
           clickable: true,
-          dynamicBullets: true
+          dynamicBullets: true,
         },
         breakpoints: {
           568: {
-            slidesPerView: 2
+            slidesPerView: 2,
+          },
+        },
+      })
+    }
+  },
+  apollo: {
+    testimonialSection: {
+      query: gql`
+        query {
+          testimonialSection {
+            titulo,
+            subtitulo,
+            testimonials{
+              nome,
+              tipo,
+              descricao,
+              numeroEstrelas,
+              imagem{
+                url
+              }
+            }
           }
         }
-      });
-    }
-  }
+      `,
+    },
+  },
 }
 </script>
 <style scoped>
