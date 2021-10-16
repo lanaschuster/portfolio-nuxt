@@ -14,7 +14,7 @@
         </div>
 
         <img
-          :src="`${url}${discountSection.imagem.url}`"
+          :src="`${discountSection.imagem.url}`"
           alt="Discount"
           class="project__img"
         />

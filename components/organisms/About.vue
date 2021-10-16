@@ -4,7 +4,7 @@
 
     <div class="about__container container grid">
       <img
-        :src="`${url}${about.imagem.url}`"
+        :src="`${about.imagem.url}`"
         alt="Sobre mim"
         class="about__img"
       />

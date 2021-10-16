@@ -11,7 +11,7 @@
         >
           <div class="testimonial__data">
             <div class="testimonial__header">
-              <img :src="`${url}${item.imagem.url}`" alt="Foto do cliente" class="testimonial__img" />
+              <img :src="`${item.imagem.url}`" alt="Foto do cliente" class="testimonial__img" />
               <div>
                 <h3 class="testimonial__name">{{ item.nome }}</h3>
                 <span class="testimonial__client">{{ item.tipo }}</span>

@@ -9,7 +9,7 @@
           :key="`project_${i}`"
           class="portfolio__content grid swiper-slide"
         >
-          <img :src="`${url}${p.imagem.url}`" :alt="p.nome" class="portfolio__img" />
+          <img :src="`${p.imagem.url}`" :alt="p.nome" class="portfolio__img" />
 
           <div class="portfolio__data">
             <h3 class="portfolio__title">{{ p.nome }}</h3>
