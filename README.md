@@ -8,6 +8,16 @@ https://lanaschuster-portfolio-t.herokuapp.com/
 
 ![Alt text](/screenshot.jpg)
 
+## Referências
+
+A ideia deste projeto se originou [deste tutorial](https://www.youtube.com/watch?v=27JtRAI3QO8) do canal BedimCode.
+Neste tutorial é construído um site estático com HTML, CSS e JS.
+No projeto deste repositório, foi construído o site do tutorial com a mesma estilização,
+porém desenvolvido com Nuxt.js + Strapi, onde pude separar o site em componentes
+e torná-los dinâmicos, isto é, todo o conteúdo do site pode ser alterado pelo painel administrador do Strapi.
+Neste repositório em questão está apenas o projeto front-end. Se você quer dar uma olhada
+no back-end com Strapi, [veja aqui](https://github.com/lanaschuster/portfolio-strapi)
+
 ## Build Setup
 
 ```bash
