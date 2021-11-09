@@ -25,7 +25,7 @@
           <a
             target="_blank"
             download="Lana_cv.pdf"
-            :href="`${about.curriculo.url}`"
+            href="/files/curriculo_Lana_2021.pdf"
             class="button button--flex"
           >
             Download CV <i class="uil uil-download-alt button__icon"></i>

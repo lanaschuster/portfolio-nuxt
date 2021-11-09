@@ -29,8 +29,8 @@ export default {
   },
   data() {
     return {
-      listener: null,
-      listener2: null,
+      lScrollHeader: null,
+      lScrollTop: null,
       tema: {}
     }
   },
@@ -48,18 +48,22 @@ export default {
     },
   },
   mounted() {
-    if (!this.listener) {
-      this.listener = window.addEventListener('scroll', this.scrollHeader)
+    if (!this.lScrollHeader) {
+      this.lScrollHeader = window.addEventListener('scroll', this.scrollHeader)
     }
-    if (!this.listener2) {
-      this.listener2 = window.addEventListener('scroll', this.scrollTop)
+    if (!this.lScrollTop) {
+      this.lScrollTop = window.addEventListener('scroll', this.scrollTop)
     }
   },
   beforeDestroy() {
-    if (this.listener) 
+    if (this.lScrollHeader) {
       window.removeEventListener('scroll', this.scrollHeader)
-    if (this.listener2) 
+      this.lScrollHeader = null
+    }
+    if (this.lScrollTop) {
       window.removeEventListener('scroll', this.scrollTop)
+      this.lScrollTop = null
+    }
   },
   methods: {
     scrollHeader() {
@@ -84,10 +88,6 @@ export default {
   --header-height: 3rem;
 
   /* Colors */
-  /* --hue-color: 337; */
-  /* 337 rosa */
-  /* 284 rosa meio roxo */
-
   --first-color: hsl(var(--hue-color), 69%, 61%);
   --first-color-second: hsl(var(--hue-color), 69%, 61%);
   --first-color-alt: hsl(var(--hue-color), 57%, 53%);
