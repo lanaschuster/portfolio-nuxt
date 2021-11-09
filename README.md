@@ -1,5 +1,13 @@
 # portfolio-nuxt
 
+Aplicação para a criação de um Portfólio construído em Nuxt.js, integrado com o Strapi Headless CMS.
+
+Demo: 
+https://lanaschuster-portfolio-t.herokuapp.com/
+
+
+![Alt text](/screenshot.jpg)
+
 ## Build Setup
 
 ```bash
@@ -68,12 +76,12 @@ This directory contains your Vuex store files. Creating a file in this directory
 
 More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
 
-## Heroku
+## Alguns comandos Heroku
 
-heroku logs --tail
+```heroku logs --tail```
 
-heroku restart -a lanaschuster-portfolio-t
+```heroku restart -a project_name```
 
-git push heroku master
+```git push heroku master```
 
-heroku login
+```heroku login```
