@@ -22,14 +22,13 @@
           </div>
         </div>
         <div class="about__btns">
-          <a
+          <DownloadButton
+            text="Download CV"
             target="_blank"
             download="Lana_cv.pdf"
             href="/files/curriculo_Lana_2021.pdf"
-            class="button button--flex"
-          >
-            Download CV <i class="uil uil-download-alt button__icon"></i>
-          </a>
+            icon-class="uil-download-alt"
+          />
         </div>
       </div>
     </div>

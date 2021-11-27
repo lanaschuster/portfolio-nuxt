@@ -16,14 +16,13 @@
             <p class="portfolio__description">
               {{ p.descricao }}
             </p>
-            <a
+            <Button
+              text="Demo"
               :href="p.url"
               target="_blank"
-              class="button button--flex button--small portfolio__button"
-            >
-              Demo
-              <i class="uil uil-arrow-right button__icon"></i>
-            </a>
+              icon-class="uil-arrow-right"
+              :classes="['button--small', 'portfolio__button']"
+            />
           </div>
         </div>
       </div>

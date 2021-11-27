@@ -46,9 +46,11 @@
             <p class="home__description">
               {{ home.descricao }}
             </p>
-            <a href="#contact" class="button button--flex">
-              Entre em contato <i class="uil uil-message button__icon"></i>
-            </a>
+            <Button
+              text="Entre em contato"
+              href="#contact"
+              icon-class="uil-message"
+            />
             <div class="home__scroll">
               <a class="home__scroll-button button--flex" href="#about">
                 <i class="uil uil-mouse-alt home__scroll-mouse"></i>

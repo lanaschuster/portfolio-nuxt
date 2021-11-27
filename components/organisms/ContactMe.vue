@@ -49,10 +49,11 @@
           <p class="contact__label">* campos de preenchimento obrigatório</p>
         </div>
         <div>
-          <a class="button button--flex" @click="validate">
-            Enviar mensagem
-            <i class="uil uil-message button__icon"></i>
-          </a>
+          <Button
+            text="Enviar mensagem"
+            icon-class="uil-message"
+            @click="validate"
+          />
         </div>
       </form>
     </div>

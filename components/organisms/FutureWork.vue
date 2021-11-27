@@ -7,10 +7,13 @@
           <p class="project__description">
             {{ discountSection.descricao }}
           </p>
-          <a href="#contact" class="button button--flex button--white">
-            Entre em contato
-            <i class="uil uil-message button__icon project__icon"></i>
-          </a>
+
+          <Button
+            text="Entre em contato"
+            href="#contact"
+            icon-class="uil-message"
+            :classes="['button--white']"
+          />
         </div>
 
         <img
