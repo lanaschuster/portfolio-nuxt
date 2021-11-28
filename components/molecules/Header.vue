@@ -5,36 +5,14 @@
 
       <div ref="navMenu" class="nav__menu">
         <ul class="nav__list grid">
-          <li class="nav__item">
-            <NuxtLink to="#home" class="nav__link" @click="closeMenu">
-              <i class="uil uil-estate nav__icon"></i> Home
-            </NuxtLink>
-          </li>
-          <li class="nav__item">
-            <NuxtLink to="#about" class="nav__link" @click="closeMenu">
-              <i class="uil uil-user nav__icon"></i> Sobre
-            </NuxtLink>
-          </li>
-          <li class="nav__item">
-            <NuxtLink to="#skills" class="nav__link" @click="closeMenu">
-              <i class="uil uil-file-alt nav__icon"></i> Competências
-            </NuxtLink>
-          </li>
-          <li class="nav__item">
-            <NuxtLink to="#services" class="nav__link" @click="closeMenu">
-              <i class="uil uil-briefcase-alt nav__icon"></i> Serviços
-            </NuxtLink>
-          </li>
-          <li class="nav__item">
-            <NuxtLink to="#portfolio" class="nav__link" @click="closeMenu">
-              <i class="uil uil-scenery nav__icon"></i> Portfólio
-            </NuxtLink>
-          </li>
-          <li class="nav__item">
-            <NuxtLink to="#contact" class="nav__link" @click="closeMenu">
-              <i class="uil uil-message nav__icon"></i> Contato
-            </NuxtLink>
-          </li>
+          <NavItem
+            v-for="(menu, i) in menus"
+            :key="`menu_${i}`"
+            :to="menu.to"
+            :text="menu.text"
+            :icon-class="menu.iconClass"
+            @click="closeMenu"
+          />
         </ul>
         <i ref="navClose" class="uil uil-times nav__close" @click="closeMenu"></i>
       </div>
@@ -54,6 +32,41 @@ export default {
     title: {
       type: String,
       default: ''
+    }
+  },
+  data() {
+    return {
+      menus: [
+        {
+          to: '#home',
+          text: 'Home',
+          iconClass: 'uil-estate'
+        },
+        {
+          to: '#about',
+          text: 'Sobre',
+          iconClass: 'uil-user'
+        },
+        {
+          to: '#skills',
+          text: 'Competências',
+          iconClass: 'uil-file-alt'
+        },{
+          to: '#services',
+          text: 'Serviços',
+          iconClass: 'uil-briefcase-alt'
+        },
+        {
+          to: '#portfolio',
+          text: 'Portfólio',
+          iconClass: 'uil-scenery'
+        },
+        {
+          to: '#contact',
+          text: 'Contato',
+          iconClass: 'uil-message'
+        }
+      ]
     }
   },
   mounted() {
